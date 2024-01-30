@@ -1,0 +1,55 @@
+﻿@model ReversiMvcApp.Models.Speler
+
+@{
+    ViewData["Title"] = "Beheer";
+}
+
+<h1>Beheer</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Admin", "Home", FormMethod.Post))
+        {
+            <input type="text" placeholder="Email" name="userEmailField" id="userEmailField" />
+            <input type="submit" class="btn btn-primary" value="Zoek Gebruiker"/>
+        }
+        <h3 class="alert-danger">@ViewBag.Message</h3>
+
+        @if (ViewBag.status == true)
+        {
+            <h1>User info</h1>
+
+            @using (Html.BeginForm("EditUser", "Home", FormMethod.Post))
+            {
+                <h5>Username</h5>
+                <input type="text" name="Username" value="@ViewBag.UserName"/>
+                <br />
+
+                <h5>Speler rol</h5>
+                <input type="checkbox" name="RoleSpeler" @if(ViewBag.SpelerClaim){ @("checked") } />
+                <h5>Mediator rol</h5>
+                <input type="checkbox" name="RoleMediator" @if(ViewBag.MediatorClaim){ @("checked") } />
+                <h5>Beheerder rol</h5>
+                <input type="checkbox" name="RoleBeheerder" @if(ViewBag.BeheerderClaim){ @("checked") } />
+                <input type="hidden" name="UserId" id="UserId" value="@ViewBag.UserID" />
+                <br />
+
+                <input type="submit" class="btn btn-primary" value="Opslaan"/>
+            }
+
+            <br />
+
+            @using (Html.BeginForm("DeleteUser", "Home", FormMethod.Post))
+            {
+                <input type="hidden" name="UserId" id="UserId" value="@ViewBag.UserID" />
+                <input type="submit" class="btn btn-danger" value="Verwijder gebruiker"/>
+            }
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-area="" asp-controller="Home" asp-action="Admin">Back to List</a>
+</div>
+
+

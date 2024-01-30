@@ -1,0 +1,191 @@
+﻿@model ReversiMvcApp.Models.Spel
+
+@{
+    ViewData["Title"] = "Spel";
+}
+
+@section PopupScripts {
+    <script src="~/Scripts/FeedbackWidget.js" asp-append-version="true"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
+}
+
+@*@section popup {
+
+    <link rel="Stylesheet" href="~/Style/popup.css" />
+    
+
+    <section class="alert alert-success fade-in" id="popup" role="alert">
+
+        <div style="display: flex; justify-content: flex-end;">
+            <button id="x-btn">x</button>
+        </div>
+        <div style="display: flex; align-items: flex-end;">
+            <h1 id="vinkje">✔</h1>
+            <p>.... wilt deelnemen aan jouw spel. Geef akkoord</p>
+        </div>
+
+        <div id="popup-btns" style="display: flex;justify-content: flex-end;">
+            <button class="vibrator" id="akkoord-btn">Akkoord</button>
+            <button id="weigeren-btn">Weigeren</button>
+        </div>
+    </section>
+}*@
+
+
+
+@*@section eindScherm{
+    <link rel="Stylesheet" href="~/Style/style.min.css" />
+
+    <div class="scoreScherm">
+        <div class="score">
+            <div><h1 id="Score-Wit">35</h1></div>
+            <div><h1 id="Kleur-Winnaar">Wit</h1></div>
+            <div><h1 id="Score-Zwart">25</h1></div>
+        </div>
+        <div class="scoreKnop">
+            <form asp-action="SpelPagina">
+                <input asp-for="token" type="hidden" />
+                <input name="eindstand" type="hidden" value="wit"/>
+            <input type="submit" value="Klaar" class="Score-Btn" />
+            </form>
+        </div>
+    </div>
+}*@
+
+<link rel="Stylesheet" href="~/Style/style.min.css" />
+@*<h1>Spel</h1>*@ 
+
+<div>
+    <div id="SPA">
+        <div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        <div class="rij">
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+            <div class="kolom"></div>
+        </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" onclick="SPA.pas()">PAS</button>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.token)
+        </dt>
+        <dd id="spelToken" class="col-sm-10">
+            @Html.DisplayFor(model => model.token)
+                
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.omschrijving)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.omschrijving)
+                
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.bord)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.bord)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.bordString)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.bordString)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aanDeBeurt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aanDeBeurt)
+        </dd>
+        <dt class="col-sm-2">
+            Speler1
+        </dt>
+        <dd id="Speler1Token" class="col-sm-10">
+            @ViewData["Speler1"]
+        </dd>
+        <dt class="col-sm-2">
+            Speler2
+        </dt>
+        <dd id="Speler2Token" class="col-sm-10">
+            @ViewData["Speler2"]
+        </dd>
+    </dl>
+</div>

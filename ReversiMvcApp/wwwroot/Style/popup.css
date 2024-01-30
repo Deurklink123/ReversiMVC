@@ -1,0 +1,71 @@
+﻿.fade-in {
+    animation: fadeIn ease 2s;
+}
+
+.fade-out {
+    animation: fadeOut ease 2s;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    /*height: 0;*/
+}
+
+.vibrator {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+    -webkit-animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    5%, 45% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    10%, 40% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    15%, 25%, 35% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    20%, 30% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #vinkje {
+        display: none;
+    }
+
+    #popup p {
+        font-size: 8px;
+    }
+
+    #popup-btns {
+        flex-direction: column;
+    }
+}
