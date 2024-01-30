@@ -7914,11 +7914,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\timsm\\OneDrive\\Windesheim\\ServerTechnologie\\reversi\\ReversiMvcApp\\ReversiMvcApp\\ReversiMvcApp.csproj",
+      "projectUniqueName": "C:\\Users\\timsm\\OneDrive\\Windesheim\\ServerTechnologie\\reversi\\ReversiMvcApp\\ReversiMVC\\ReversiMvcApp\\ReversiMvcApp.csproj",
       "projectName": "ReversiMvcApp",
-      "projectPath": "C:\\Users\\timsm\\OneDrive\\Windesheim\\ServerTechnologie\\reversi\\ReversiMvcApp\\ReversiMvcApp\\ReversiMvcApp.csproj",
+      "projectPath": "C:\\Users\\timsm\\OneDrive\\Windesheim\\ServerTechnologie\\reversi\\ReversiMvcApp\\ReversiMVC\\ReversiMvcApp\\ReversiMvcApp.csproj",
       "packagesPath": "C:\\Users\\timsm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\timsm\\OneDrive\\Windesheim\\ServerTechnologie\\reversi\\ReversiMvcApp\\ReversiMvcApp\\obj\\",
+      "outputPath": "C:\\Users\\timsm\\OneDrive\\Windesheim\\ServerTechnologie\\reversi\\ReversiMvcApp\\ReversiMVC\\ReversiMvcApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\timsm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7989,6 +7989,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7997,7 +8003,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
